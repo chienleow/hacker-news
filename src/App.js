@@ -5,22 +5,19 @@ class App extends React.Component {
     super(props);
     this.state = {
       error: null,
-      isLoaded: false,
+      isLoaded: true,
       items: []
-    };
+    }
   }
 
   componentDidMount() {
-    fetch("https://hn.algolia.com/api")
-    .then(res => res.json())
-    .then(
-      (result) => {
-        this.setState({
-          isLoaded: true,
-          items: result.items
-        })
-      }
-    )
+
+  }
+
+  render() {
+    return <div>
+      {this.state.loading ? <div>loading...</div> : <div>news</div>}
+    </div>
   }
 
 
