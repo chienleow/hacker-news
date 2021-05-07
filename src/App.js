@@ -1,26 +1,10 @@
 import React from 'react';
+import Axios from 'axios';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      error: null,
-      isLoaded: true,
-      items: []
-    }
+function App() {
+  const getNews = () => {
+    Axios.get("https://hn.algolia.com/api/v1/search?&tags=story&page=1&hitsPerPage=15&query=")
   }
-
-  componentDidMount() {
-
-  }
-
-  render() {
-    return <div>
-      {this.state.loading ? <div>loading...</div> : <div>news</div>}
-    </div>
-  }
-
-
 }
 
 export default App;
